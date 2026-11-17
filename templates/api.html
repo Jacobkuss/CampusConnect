@@ -1,20 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - CampusConnect</title>
+    <title>Weather Dashboard - CampusConnect</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
-        <h1>Student Dashboard</h1>
+        <h1>Weather Dashboard</h1>
     </header>
+
     <main>
-        <p>Welcome back! Here’s what’s happening:</p>
-        <ul>
-            <li>More features coming soon...</li>
-            <li><a href="/events">View Events</a></li>
-        </ul>
+        <h2>Newberry, South Carolina Forecast</h2>
+
+        {% if weather_data %}
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Temperature (°F)</th>
+                    <th>Wind Speed (mph)</th>
+                    <th>Conditions</th>
+                </tr>
+
+                {% for day in weather_data %}
+                <tr>
+                    <td>{{ day['forecast_date'] }}</td>
+                    <td>{{ day['temperature'] }}</td>
+                    <td>{{ day['wind_speed'] }}</td>
+                    <td>{{ day['weather_condition'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No weather data available.</p>
+        {% endif %}
+
+        <p><a href="/events">View Events</a></p>
     </main>
 </body>
 </html>
