@@ -1,12 +1,20 @@
+
 -- SQLite schema
+
+-- Drop existing tables so the database can be recreated
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS events;
+DROP TABLE IF EXISTS external_events;
+DROP TABLE IF EXISTS api_data;
+
+-- Users table
 CREATE TABLE users (
     id INTEGER PRIMARY KEY,
     name TEXT NOT NULL,
     preferences TEXT
 );
 
-DROP TABLE IF EXISTS events;
+-- Original internal events table
 CREATE TABLE events (
     id INTEGER PRIMARY KEY,
     title TEXT NOT NULL,
@@ -14,4 +22,20 @@ CREATE TABLE events (
     date TEXT
 );
 
--- Create external scraped events table here
+-- Stores events scraped from the college website
+CREATE TABLE external_events (
+    id INTEGER PRIMARY KEY,
+    title TEXT NOT NULL,
+    date TEXT,
+    location TEXT,
+    description TEXT
+);
+
+-- Stores weather information from Open-Meteo
+CREATE TABLE api_data (
+    id INTEGER PRIMARY KEY,
+    forecast_date TEXT,
+    temperature REAL,
+    wind_speed REAL,
+    weather_condition TEXT
+);
