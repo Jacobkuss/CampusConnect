@@ -1,0 +1,69 @@
+
+/* Main website styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation and footer */
+.navbar, footer {
+    background-color: #00539C;
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: #dcecff;
+}
+
+/* Homepage hero section */
+.hero {
+    background-color: #e8f1fa;
+    color: #003f7d;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #00539C;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #00539C;
+    border-color: #00539C;
+}
+
+.btn-primary:hover {
+    background-color: #003f7d;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+}
+
+/* Smaller screens */
+@media (max-width: 576px) {
+    .hero {
+        padding: 2rem !important;
+    }
+
+    main {
+        padding-top: 2rem;
+    }
+}
